@@ -1,0 +1,13 @@
+keys:
+  - &test age1k6xeszjgyz8ejmc29yg3e9lsfkyftq0rrmu64egdtl8fsk9t59dsekdrcr
+  - &prod age1srl9p7fq0r0eyhyt658fayg0svrfft875ylg6cw4ygzkp90e0f8qk0xtxx
+
+creation_rules:
+  - path_regex: users/test/secrets.yaml
+    key_groups:
+      - age:
+          - *test
+  - path_regex: users/will/secrets.yaml
+    key_groups:
+      - age:
+          - *prod
