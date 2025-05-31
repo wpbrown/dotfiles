@@ -13,7 +13,7 @@
   options.rebeagle.storage.rootfsPartition = lib.mkOption {
     type = lib.types.path;
     default = "/dev/disk/by-partlabel/disk-main-root";
-    readonly = true;
+    readOnly = true;
   };
 
   config =

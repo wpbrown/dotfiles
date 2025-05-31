@@ -38,7 +38,7 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
   
   # Configure sops secret decryption
-  sops.age.keyFile = "/var/lib/sops-nix/key.txt";
+  sops.age.keyFile = "/var/lib/sops-nix/keys.txt";
 
   # Install packages
   environment.systemPackages = with pkgs; [

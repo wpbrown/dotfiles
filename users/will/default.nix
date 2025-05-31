@@ -3,7 +3,7 @@
   sops.defaultSopsFile = "${self}/private/secrets/client.prod.yaml";
   sops.secrets.will-password.neededForUsers = true;
 
-  users.users.test = {
+  users.users.will = {
     isNormalUser = true;
     description = "Will";
     extraGroups = [

@@ -19,7 +19,7 @@
   options.rebeagle.storage.rootfsPartition = lib.mkOption {
     type = lib.types.path;
     default = "/dev/disk/by-partlabel/turing-mirror1";
-    readonly = true;
+    readOnly = true;
   };
 
   config =
@@ -27,6 +27,11 @@
       cfg = config.rebeagle.storage.tripleDisk;
     in
     {
+      # Ensure all the partitions are available for mounting in the initrd stage 1 environment
+      boot.initrd.postDeviceCommands = lib.mkOrder 0 ''
+        btrfs device scan /dev/disk/by-partlabel/turing-mirror1 /dev/disk/by-partlabel/turing-mirror2
+      '';
+
       disko.devices = {
         # terrible hack to ensure that the secondary disk is formatted first
         # mirrorDisk1 depends on mirrorDisk2. 

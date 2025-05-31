@@ -5,6 +5,9 @@
     ../turing
   ];
 
+  # Override the hostname
+  networking.hostName = lib.mkForce "turingv";
+
   # Override storage for QEMU virtual disks
   rebeagle.storage.tripleDisk = {
     mirrorDisk1 = lib.mkForce "/dev/sda";

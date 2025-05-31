@@ -9,7 +9,7 @@ git auth login -p https -h github.com -w
 git clone --recurse-submodules https://github.com/wpbrown/dotfiles.git
 
 # paste the sops key
-nano key.txt
+nano keys.txt
 
 # specify the host being installed
 sudo ./dotfiles/bootstrap/install.sh <hostname>
@@ -26,8 +26,11 @@ Create a single-disk small test VM with KDE.
 Instead of pulling the config from GitHub, it can be retrieved from the host.
 
 ```
-mkdir dotfiles
+mkdir secrets dotfiles
+sudo mount -t 9p -o trans=virtio lxd_secrets secrets
 sudo mount -t 9p -o trans=virtio lxd_dotfiles dotfiles
+cd secrets
+sudo ../dotfiles/bootstrap/install.sh <hostname>
 ```
 
 The default password is `test`.
