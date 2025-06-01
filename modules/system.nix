@@ -51,8 +51,10 @@
     enable = true;
     clean.enable = true;
     clean.extraArgs = "--keep-since 7d --keep 5";
-    flake = "/home/will/dev/dotfiles";
   };
+  
+  # Flake option for nh requires an absolute path so we have to do this manually
+  environment.variables.NH_FLAKE = "git+file:///home/will/dev/dotfiles?submodules=1";
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
