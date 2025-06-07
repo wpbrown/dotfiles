@@ -1,4 +1,4 @@
-{ self, config, ... }:
+{ self, config, pkgs, ... }:
 {
   sops.defaultSopsFile = "${self}/private/secrets/client.prod.yaml";
   sops.secrets.will-password.neededForUsers = true;
@@ -12,4 +12,8 @@
     ];
     hashedPasswordFile = config.sops.secrets.will-password.path;
   };
+  
+  environment.systemPackages = with pkgs; [
+    vscode
+  ];
 }

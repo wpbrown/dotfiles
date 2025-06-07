@@ -48,3 +48,14 @@ https://lgug2z.com/articles/handling-secrets-in-nixos-an-overview/
 https://fzakaria.com/2024/07/12/nix-secrets-for-dummies
 
 https://github.com/nix-community/disko/issues/641
+
+# X11
+
+https://superuser.com/questions/1183834/no-auto-resize-with-spice-and-virt-
+
+## Login Managers
+
+https://github.com/apognu/tuigreet
+https://codeberg.org/AnErrupTion/ly
+https://github.com/coastalwhite/lemurs
+https://github.com/javalsai/lidm
