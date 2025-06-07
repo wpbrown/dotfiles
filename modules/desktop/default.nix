@@ -27,6 +27,10 @@
   environment.etc."ly/save.ini" = {
     source = "/persist/ly/save.ini";
   };
+  systemd.tmpfiles.rules = [
+    "d /persist/ly 0755 root root - -"
+    "f /persist/ly/save.ini 0644 root root - user=will"
+  ];
 
   services.xserver.desktopManager.gnome.enable = true;
 
