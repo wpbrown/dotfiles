@@ -16,7 +16,18 @@
     ];
   };
 
-  services.displayManager.ly.enable = true;
+  services.displayManager.ly = {
+    enable = true;
+    settings = {
+      animation = "matrix";
+      animation_timeout_sec = 60;
+      hide_borders = true;
+    };
+  };
+  environment.etc."ly/save.ini" = {
+    source = "/persist/ly/save.ini";
+  };
+
   services.xserver.desktopManager.gnome.enable = true;
 
   # Enable CUPS to print documents.
